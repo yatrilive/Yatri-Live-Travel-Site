@@ -1,0 +1,33 @@
+<svg
+    width="320"
+    height="80"
+    viewBox="0 0 320 80"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <text
+        x="2"
+        y="60"
+        font-family="Poppins, sans-serif"
+        font-size="58"
+        font-weight="800"
+        fill="#f56551"
+    >
+        Yatri
+    </text>
+    <text
+        x="165"
+        y="60"
+        font-family="Poppins, sans-serif"
+        font-size="58"
+        font-weight="790"
+        fill="#1e293b"
+    >
+        Live
+    </text>
+    <circle cx="300" cy="50" r="6" fill="#f56551" />
+    <path
+        d="M280 45 L290 35 L300 45 L290 55 Z"
+        fill="#1e293b"
+    />
+</svg>
