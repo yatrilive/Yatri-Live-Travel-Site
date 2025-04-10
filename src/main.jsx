@@ -7,10 +7,12 @@ import CreateTrip from './create-trip';
 import Layout from "./components/custom/Layout";
 import About from './components/important/About';
 import Contact from './components/important/Contact';
-import Destinations from './components/important/Destinations';
+import Destinations from './components/important/destinations/Destinations.jsx';
 import Gear from './components/important/Gear';
-import Resources from './components/important/Resources';
+import Resources from './components/important/resources/Resources.jsx';
 import Videos from './components/important/Videos';
+import Community from './components/important/Community.jsx';
+import Blogs from './components/important/resources/blogs/Blogs.jsx';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,8 @@ const router = createBrowserRouter([
       { path: '/important/Gear', element: <Gear /> },
       { path: '/important/Resources', element: <Resources /> },
       { path: '/important/Videos', element: <Videos /> },
+      { path: '/important/Community', element: <Community /> },
+      { path: '/important/resources/blogs', element: <Blogs /> },
     ],
   },
 ]);

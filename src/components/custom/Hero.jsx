@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 
+
 const Hero = () => {
   return (
     <div className="relative w-full h-[680px]">

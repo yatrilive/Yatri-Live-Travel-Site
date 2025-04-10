@@ -30,7 +30,9 @@ function Header() {
       <div className="flex gap-6 text-[20px] font-semibold relative">
         <Link to="/" className="hover:text-blue-500"><h1>Home</h1></Link>
         <Link to="/important/About" className="hover:text-blue-500"><h1>About</h1></Link>
-        <Link to="/important/Gear" className="hover:text-blue-500"><h1>Gear</h1></Link>
+        
+        
+
 
         {/* Resources Dropdown */}
         <div className="relative dropdown-container">
@@ -47,8 +49,9 @@ function Header() {
           {openDropdown === 'resources' && (
             <div className="absolute left-0 bg-white shadow-lg mt-2 rounded-lg z-10 w-48 transition-all duration-300 ease-in-out">
               <ul className="space-y-2 py-2 px-4">
-                <li><Link to="/important/Tips" className="block text-gray-800 hover:text-blue-500">Tips & Tricks</Link></li>
-                <li><Link to="/important/Blog" className="block text-gray-800 hover:text-blue-500">Blog</Link></li>
+                <li><Link to="/important/Videos" className="hover:text-blue-500"><h1>Videos</h1></Link></li>
+                <li><Link to="/important/resources/blogs" className="block text-gray-800 hover:text-blue-500">Blog</Link></li>
+                <li><Link to="/important/Tips" className="block text-gray-800 hover:text-blue-500">Tips & Tricks</Link></li>                
                 <li><Link to="/important/Ebook" className="block text-gray-800 hover:text-blue-500">E-book</Link></li>
                 <li><Link to="/important/Contact" className="block text-gray-800 hover:text-blue-500">Talk to Me</Link></li>
               </ul>
@@ -79,8 +82,10 @@ function Header() {
             </div>
           )}
         </div>
+        <Link to="/important/Gear" className="hover:text-blue-500"><h1>Gear</h1></Link>
+        <Link to="/important/Community" className="hover:text-blue-500"><h1>Community</h1></Link>
 
-        <Link to="/important/Videos" className="hover:text-blue-500"><h1>Videos</h1></Link>
+        {/* <Link to="/important/Videos" className="hover:text-blue-500"><h1>Videos</h1></Link> */}
         <Link to="/important/Contact" className="hover:text-blue-500"><h1>Contact</h1></Link>
       </div>
 
