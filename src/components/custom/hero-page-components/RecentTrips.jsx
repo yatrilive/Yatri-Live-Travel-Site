@@ -1,38 +1,125 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const destinations = [
-  { name: "Delhi", image: "https://images.unsplash.com/photo-1513014576558-921f00d80b77?q=80&w=2059&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-  { name: "Sri Lanka", image: "https://plus.unsplash.com/premium_photo-1712366459284-2b564cc93a16?q=80&w=1998&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-  { name: "Bangkok", image: "https://images.unsplash.com/photo-1598970605070-a38a6ccd3a2d?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }
+  {
+    name: "Bali, Indonesia",
+    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2038&auto=format&fit=crop",
+    date: "March 2024",
+    duration: "10 days",
+    highlights: ["Temple Hopping", "Beach Relaxation", "Local Culture"],
+    rating: 4.9,
+    price: "$1,299"
+  },
+  {
+    name: "Kyoto, Japan",
+    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=2070&auto=format&fit=crop",
+    date: "February 2024",
+    duration: "7 days",
+    highlights: ["Cherry Blossoms", "Traditional Temples", "Tea Ceremony"],
+    rating: 4.8,
+    price: "$1,599"
+  },
+  {
+    name: "Santorini, Greece",
+    image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=2086&auto=format&fit=crop",
+    date: "January 2024",
+    duration: "8 days",
+    highlights: ["Sunset Views", "Island Hopping", "Wine Tasting"],
+    rating: 4.9,
+    price: "$1,499"
+  }
 ];
 
 const RecentTrips = () => {
   return (
-    <section className="py-10 px-5 bg-[#578FCA] text-white">
-      {/* Header Section */}
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-4xl font-bold">My Recent Trips</h1>
-        <button className="px-4 py-2 bg-[#A6C8E9] text-[#1E3A5F] font-semibold rounded-md shadow-md hover:bg-[#8FB7E3] transition-all">
-          See All Trips
-        </button>
-      </div>
+    <section className="py-20 px-6 bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-7xl mx-auto">
+        {/* Header Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Recent Adventures
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Explore our latest travel experiences and get inspired for your next journey
+          </p>
+        </motion.div>
 
-      {/* Destinations Grid */}
-      <div className="grid md:grid-cols-3 gap-6">
-        {destinations.map((place, index) => (
-          <div key={index} className="rounded-2xl overflow-hidden shadow-lg bg-white text-black">
-            <img src={place.image} alt={place.name} className="w-full h-56 object-cover" />
-            <div className="p-4">
-              <p className="text-lg font-semibold">{place.name}</p>
-              <button className="mt-4 px-4 py-2 bg-[#578FCA] text-white rounded-md shadow-md hover:bg-[#457AA7] transition-all">
-                Explore More
-              </button>
-            </div>
-          </div>
-        ))}
+        {/* Destinations Grid */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {destinations.map((place, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <div className="relative">
+                <img 
+                  src={place.image} 
+                  alt={place.name} 
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-gray-800">
+                  {place.duration}
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm text-gray-500">{place.date}</span>
+                  <div className="flex items-center gap-1">
+                    <span className="text-yellow-400">★</span>
+                    <span className="font-semibold">{place.rating}</span>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{place.name}</h3>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {place.highlights.map((highlight, i) => (
+                    <span 
+                      key={i}
+                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                    >
+                      {highlight}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-2xl font-bold text-gray-900">{place.price}</span>
+                  <button className="px-6 py-2 bg-gradient-to-r from-[#f56551] to-[#ff8a75] text-white rounded-xl font-semibold hover:from-[#d94e3f] hover:to-[#f56551] transition-all duration-300">
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* View All Button */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="text-center mt-12"
+        >
+          <Link to="/important/Destinations">
+            <button className="px-8 py-4 bg-white border-2 border-gray-200 rounded-xl font-semibold text-gray-800 hover:bg-gray-50 transition-all duration-300">
+              View All Adventures
+            </button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default RecentTrips;1
+export default RecentTrips;

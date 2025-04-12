@@ -8,11 +8,13 @@ import Layout from "./components/custom/Layout";
 import About from './components/important/About';
 import Contact from './components/important/Contact';
 import Destinations from './components/important/destinations/Destinations.jsx';
-import Gear from './components/important/Gear';
+import DestinationDetail from './components/important/destinations/DestinationDetail.jsx';
+import Gear from './components/important/resources/gear/Gear';
 import Resources from './components/important/resources/Resources.jsx';
-import Videos from './components/important/Videos';
-import Community from './components/important/Community.jsx';
+import Videos from './components/important/resources/videos/Videos';
+import Community from './components/important/community/Community.jsx';
 import Blogs from './components/important/resources/blogs/Blogs.jsx';
+import Courses from './components/important/resources/cources/Courses.jsx';
 
 const router = createBrowserRouter([
   {
@@ -24,11 +26,13 @@ const router = createBrowserRouter([
       { path: '/important/About', element: <About /> },
       { path: '/important/Contact', element: <Contact /> },
       { path: '/important/Destinations', element: <Destinations /> },
-      { path: '/important/Gear', element: <Gear /> },
+      { path: '/important/:destinationName', element: <DestinationDetail /> },
+      { path: '/important/resources/gear', element: <Gear /> },
       { path: '/important/Resources', element: <Resources /> },
-      { path: '/important/Videos', element: <Videos /> },
-      { path: '/important/Community', element: <Community /> },
+      { path: '/important/resources/videos', element: <Videos /> },
+      { path: '/important/community', element: <Community /> },
       { path: '/important/resources/blogs', element: <Blogs /> },
+      { path: '/important/resources/courses', element: <Courses /> },
     ],
   },
 ]);

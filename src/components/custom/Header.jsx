@@ -49,11 +49,10 @@ function Header() {
           {openDropdown === 'resources' && (
             <div className="absolute left-0 bg-white shadow-lg mt-2 rounded-lg z-10 w-48 transition-all duration-300 ease-in-out">
               <ul className="space-y-2 py-2 px-4">
-                <li><Link to="/important/Videos" className="hover:text-blue-500"><h1>Videos</h1></Link></li>
-                <li><Link to="/important/resources/blogs" className="block text-gray-800 hover:text-blue-500">Blog</Link></li>
-                <li><Link to="/important/Tips" className="block text-gray-800 hover:text-blue-500">Tips & Tricks</Link></li>                
+                <li><Link to="/important/resources/videos" className="hover:text-blue-500"><h1>Videos</h1></Link></li>
+                <li><Link to="/important/resources/blogs" className="block text-gray-800 hover:text-blue-500">Blogs</Link></li>
+                <li><Link to="/important/resources/courses" className="block text-gray-800 hover:text-blue-500">Courses</Link></li>
                 <li><Link to="/important/Ebook" className="block text-gray-800 hover:text-blue-500">E-book</Link></li>
-                <li><Link to="/important/Contact" className="block text-gray-800 hover:text-blue-500">Talk to Me</Link></li>
               </ul>
             </div>
           )}
@@ -74,6 +73,7 @@ function Header() {
           {openDropdown === 'destinations' && (
             <div className="absolute left-0 bg-white shadow-lg mt-2 rounded-lg z-10 w-48 transition-all duration-300 ease-in-out">
               <ul className="space-y-2 py-2 px-4">
+              <li><Link to="/important/Destinations" className="block text-gray-800 hover:text-blue-500">All Destinations</Link></li>
                 <li><Link to="/important/Asia" className="block text-gray-800 hover:text-blue-500">Asia</Link></li>
                 <li><Link to="/important/Europe" className="block text-gray-800 hover:text-blue-500">Europe</Link></li>
                 <li><Link to="/important/India" className="block text-gray-800 hover:text-blue-500">India</Link></li>
@@ -82,10 +82,10 @@ function Header() {
             </div>
           )}
         </div>
-        <Link to="/important/Gear" className="hover:text-blue-500"><h1>Gear</h1></Link>
         <Link to="/important/Community" className="hover:text-blue-500"><h1>Community</h1></Link>
 
         {/* <Link to="/important/Videos" className="hover:text-blue-500"><h1>Videos</h1></Link> */}
+        <Link to="/important/resources/gear" className="hover:text-blue-500"><h1>Gear</h1></Link>
         <Link to="/important/Contact" className="hover:text-blue-500"><h1>Contact</h1></Link>
       </div>
 
